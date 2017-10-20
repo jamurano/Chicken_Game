@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class ChickenFollow : MonoBehaviour {
 
-	// Use this for initialization
+	public Transform target;
+	public Transform myTransform;
+
 	void Start () {
+
+		target = GameObject.FindWithTag ("Player").transform;
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+
+		transform.LookAt (target);
+		transform.Translate (Vector3.forward * Time.deltaTime);
+
 	}
 }
